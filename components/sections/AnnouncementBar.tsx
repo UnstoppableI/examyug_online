@@ -16,7 +16,7 @@ export function AnnouncementBar() {
   return (
     <div className="bg-accent bg-opacity-10 border-b border-accent border-opacity-20 text-center py-6">
       <div className="overflow-hidden">
-        <div className="absolute animate-marquee space-y-6 " style={{justify-self: 'center'}}>
+        <div className="absolute animate-marquee space-y-6 justify-self-center">
           {announcements.map((item, index) => (
             <div
               key={index}
