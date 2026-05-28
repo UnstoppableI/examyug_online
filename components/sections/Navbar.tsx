@@ -15,9 +15,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center gap-2">
-          // BookOpen className="w-6 h-6 text-primary" 
           <Image
-            src="@/public/logo.jpeg"      // Path relative to the public folder
+            src="./logo.jpeg"      // Path relative to the public folder
             alt="Description"       // Required for accessibility
             width={200}             // Desired width in pixels
             height={200}            // Desired height in pixels
