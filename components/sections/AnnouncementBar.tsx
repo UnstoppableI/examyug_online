@@ -18,7 +18,7 @@ export function AnnouncementBar() {
           onClick={() => setIsVisible(false)}
           className="absolute right-0 text-muted-foreground hover:text-foreground transition-colors"
         >
-          <X className="w-4 h-4" />
+          
         </button>
       </div>
     </div>
