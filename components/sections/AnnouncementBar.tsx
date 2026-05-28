@@ -14,15 +14,15 @@ const announcements = [
 export function AnnouncementBar() {
 
   return (
-    <div className="bg-accent bg-opacity-10 border-b border-accent border-opacity-20 text-center py-3">
-      <div className="overflow-hidden relative">
-        <div className="absolute animate-marquee space-y-6">
+    <div className="bg-accent bg-opacity-10 border-b border-accent border-opacity-20 text-center py-6">
+      <div className="overflow-hidden ">
+        <div className="absolute animate-marquee space-y-6 " style={{justify-self: 'center';}}>
           {announcements.map((item, index) => (
             <div
               key={index}
-              className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-3 relative"
+              className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-3"
             >
-              <p className="text-sm text-foreground"><span className="font-semibold">{item.title}</span></p>
+              <p className="text-dark text-center"><span className="text-dark text-center">{item.title}</span></p>
             </div>
           ))}
         </div>
