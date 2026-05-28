@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'EduPrime - Learn from Expert Instructors',
-  description: 'Master your academic goals with personalized courses, expert instructors, and comprehensive study materials. Join thousands of successful students on EduPrime.',
+  title: 'ExamYug - Learn from Expert Instructors',
+  description: 'Master your academic goals with personalized courses, expert instructors, and comprehensive study materials. Join thousands of successful students on ExamYug.',
   generator: 'v0.app',
   icons: {
     icon: [
