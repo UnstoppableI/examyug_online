@@ -24,13 +24,13 @@ export default function AnnouncementSection() {
   return (
     <div className="bg-blue-50 border-b border-blue-200 py-4 overflow-hidden relative">
       {/* Marquee wrapper */}
-      <div className="animate-marquee whitespace-nowrap">
+      <div className="animate-marquee space-y-3">
         {announcements.map((item, index) => (
           <span
             key={index}
-            className="mx-8 inline-block text-blue-700 font-medium"
+            className="mx-5 text-blue-700 font-medium"
           >
-            {item.title} — {item.desc} — {item.date}
+            {item.date}: {item.title} — {item.desc} 
           </span>
         ))}
       </div>
