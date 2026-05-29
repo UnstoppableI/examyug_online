@@ -26,12 +26,12 @@ export default function AnnouncementSection() {
       {/* Marquee wrapper */}
       <div className="animate-marquee space-y-3">
         {announcements.map((item, index) => (
-          <span
+          <p
             key={index}
             className="mx-5 text-blue-700 font-medium"
           >
             {item.date}: {item.title} — {item.desc} 
-          </span>
+          </p>
         ))}
       </div>
 
