@@ -29,9 +29,9 @@ export function Navbar({ active }: NavbarProps) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-light border-b border-border">
+    <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        
+
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image
@@ -39,7 +39,7 @@ export function Navbar({ active }: NavbarProps) {
             alt="ExamYug Logo"
             width={50}
             height={50}
-            className="block"
+            className="block rounded-full"
           />
           <span className="text-xl font-bold text-foreground">
             ExamYug24
@@ -47,16 +47,20 @@ export function Navbar({ active }: NavbarProps) {
         </div>
 
         {/* Desktop Navbar */}
-        {/* Changed from md:flex to min-[986px]:flex */}
         <div className="hidden min-[986px]:flex items-center gap-6">
+
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`no-underline transition-colors pb-1 ${
+              className={`relative text-[15px] font-medium no-underline transition-all duration-300 
+              hover:text-primary after:absolute after:left-0 after:-bottom-1 
+              after:h-[2px] after:w-0 after:bg-primary after:transition-all 
+              after:duration-300 hover:after:w-full
+              ${
                 active === item.href
-                  ? "text-primary font-semibold border-b-2 border-primary"
-                  : "text-foreground hover:text-primary"
+                  ? "text-primary after:w-full"
+                  : "text-foreground"
               }`}
             >
               {item.label}
@@ -65,61 +69,78 @@ export function Navbar({ active }: NavbarProps) {
 
           {/* Courses Dropdown */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 no-underline text-foreground hover:text-primary transition-colors outline-none">
-              Courses <ChevronDown className="w-4 h-4" />
+            <DropdownMenuTrigger className="relative flex items-center gap-1 text-[15px] font-medium text-foreground no-underline transition-all duration-300 hover:text-primary outline-none">
+              <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
+                Courses
+              </span>
+
+              <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent>
-              <DropdownMenuItem>
+            <DropdownMenuContent className="w-64">
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
                 Data Science & Analytics
               </DropdownMenuItem>
-              <DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
                 Digital Marketing With AI
               </DropdownMenuItem>
-              <DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
                 Software Development
               </DropdownMenuItem>
-              <DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
                 Placement Program
               </DropdownMenuItem>
-              <DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
                 Banking & Finance
               </DropdownMenuItem>
-              <DropdownMenuItem>DSA Courses</DropdownMenuItem>
-              <DropdownMenuItem>Generative AI</DropdownMenuItem>
-              <DropdownMenuItem>Project Garage</DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
+                DSA Courses
+              </DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
+                Generative AI
+              </DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer hover:bg-primary/10">
+                Project Garage
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {/* Search */}
           <Input
             type="text"
             placeholder="Search courses..."
-            className="hidden xl:block w-[220px]"
+            className="hidden xl:block w-[220px] focus-visible:ring-primary"
           />
         </div>
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
-          
+
           {/* Desktop Buttons */}
           <Button
             variant="outline"
-            className="hidden min-[986px]:inline-flex"
+            className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300"
           >
             Login
           </Button>
 
           <Button
             variant="default"
-            className="hidden min-[986px]:inline-flex"
+            className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300"
           >
             Sign Up
           </Button>
 
           {/* Mobile Toggle */}
-          {/* Changed from md:hidden to max-[985px]:block */}
           <button
-            className="min-[986px]:hidden p-2 rounded-md border border-border"
+            className="min-[986px]:hidden p-2 rounded-md border border-border hover:bg-primary/10 transition-colors duration-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -133,36 +154,48 @@ export function Navbar({ active }: NavbarProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="min-[986px]:hidden bg-light border-t border-border px-4 py-4 space-y-4">
-          
+        <div className="min-[986px]:hidden bg-white border-t border-border px-4 py-4 space-y-4 shadow-md">
+
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block no-underline transition-colors ${
+              className={`block text-[15px] font-medium no-underline transition-all duration-300 hover:text-primary hover:translate-x-1
+              ${
                 active === item.href
-                  ? "text-primary font-semibold"
-                  : "text-foreground hover:text-primary"
+                  ? "text-primary"
+                  : "text-foreground"
               }`}
             >
               {item.label}
             </Link>
           ))}
 
-          {/* Mobile Dropdown Links */}
+          {/* Mobile Courses */}
           <div className="space-y-2 pt-2 border-t border-border">
-            <p className="font-semibold text-foreground">Courses</p>
+            <p className="font-semibold text-foreground">
+              Courses
+            </p>
 
-            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <span>Data Science & Analytics</span>
-              <span>Digital Marketing With AI</span>
-              <span>Software Development</span>
-              <span>Placement Program</span>
-              <span>Banking & Finance</span>
-              <span>DSA Courses</span>
-              <span>Generative AI</span>
-              <span>Project Garage</span>
+            <div className="flex flex-col gap-2 text-sm">
+              {[
+                "Data Science & Analytics",
+                "Digital Marketing With AI",
+                "Software Development",
+                "Placement Program",
+                "Banking & Finance",
+                "DSA Courses",
+                "Generative AI",
+                "Project Garage",
+              ].map((course, index) => (
+                <span
+                  key={index}
+                  className="cursor-pointer text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {course}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -170,16 +203,22 @@ export function Navbar({ active }: NavbarProps) {
           <Input
             type="text"
             placeholder="Search courses..."
-            className="w-full"
+            className="w-full focus-visible:ring-primary"
           />
 
           {/* Mobile Buttons */}
           <div className="flex flex-col gap-3">
-            <Button variant="outline" className="w-full">
+            <Button
+              variant="outline"
+              className="w-full hover:scale-[1.02] transition-transform duration-300"
+            >
               Login
             </Button>
 
-            <Button variant="default" className="w-full">
+            <Button
+              variant="default"
+              className="w-full hover:scale-[1.02] transition-transform duration-300"
+            >
               Sign Up
             </Button>
           </div>
