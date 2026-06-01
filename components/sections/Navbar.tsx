@@ -50,24 +50,30 @@ export function Navbar({ active }: NavbarProps) {
         <div className="hidden min-[986px]:flex items-center gap-6">
 
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
+<<<<<<< HEAD
+              className={`text-dark hover:text-red-500 font-bold hover:text-red-500 ${
+=======
               className={`hover:text-primary transition-colors
               ${
+>>>>>>> 779d72228611b003ec13ea43de1d8c42add971e1
                 active === item.href
-                  ? "text-primary after:w-full"
+                  ? "text-accent"
                   : "text-foreground"
-              }`}
+              
+                } `}
+              style={{ textDecoration:"none"} }
             >
               {item.label}
-            </Link>
+            </a>
           ))}
 
           {/* Courses Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger className="relative flex items-center gap-1 text-[15px] font-medium text-foreground no-underline transition-all duration-300 hover:text-primary outline-none">
-              <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
+              <span className="text-dark hover:text-red-500 font-bold">
                 Courses
               </span>
 
@@ -129,7 +135,12 @@ export function Navbar({ active }: NavbarProps) {
           </Button>
 
           <Button
+<<<<<<< HEAD
+            variant="destructive"
+            className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300 hover:bg-primary/90"
+=======
             className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300 bg-primary hover:bg-primary/90"
+>>>>>>> 779d72228611b003ec13ea43de1d8c42add971e1
           >
             Sign Up
           </Button>
@@ -157,12 +168,12 @@ export function Navbar({ active }: NavbarProps) {
               key={item.href}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block text-[15px] font-medium no-underline transition-all duration-300 hover:text-primary hover:translate-x-1
+              className={`block text-[15px] font-medium transition-all duration-300 hover:text-red-300 hover:translate-x-1
               ${
                 active === item.href
-                  ? "text-primary"
-                  : "text-foreground"
-              }`}
+                  ? "text-accent"
+                  : "text-dark"
+              }`} style={{ textDecoration:"none"} }
             >
               {item.label}
             </Link>

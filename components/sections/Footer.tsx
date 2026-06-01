@@ -10,7 +10,7 @@ export function Footer() {
               <BookOpen className="w-6 h-6" />
               <span className="text-xl font-bold">ExamYug24</span>
             </div>
-            <p className="text-white text-opacity-70">
+            <p className="text-yellow-400 text-opacity-70">
               Empowering students with quality education and personalized learning experiences.
             </p>
           </div>
@@ -18,20 +18,20 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white text-opacity-70">
-              <li><a href="#courses" className="hover:text-white transition-colors">Courses</a></li>
-              <li><a href="#materials" className="hover:text-white transition-colors">Materials</a></li>
-              <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#courses" style={{textDecoration:"none"}} className="hover:text-white transition-colors">Courses</a></li>
+              <li><a href="#materials" style={{textDecoration:"none"}} className="hover:text-white transition-colors">Materials</a></li>
+              <li><a href="#faq" style={{textDecoration:"none"}} className="hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="#" style={{textDecoration:"none"}} className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Categories</h4>
             <ul className="space-y-2 text-white text-opacity-70">
-              <li><a href="#" className="hover:text-white transition-colors">Mathematics</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Science</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Literature</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">History</a></li>
+              <li><a href="#" style={{textDecoration:"none"}} className="hover:text-white transition-colors">Mathematics</a></li>
+              <li><a href="#" style={{textDecoration:"none"}} className="hover:text-white transition-colors">Science</a></li>
+              <li><a href="#" style={{textDecoration:"none"}} className="hover:text-white transition-colors">Literature</a></li>
+              <li><a href="#" style={{textDecoration:"none"}} className="hover:text-white transition-colors">History</a></li>
             </ul>
           </div>
 
@@ -58,9 +58,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center text-white text-opacity-70 text-sm">
             <p>&copy; 2026 ExamYug24. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+              <a href="#" className="hover:text-white text-light no-underline">Privacy Policy</a>
+              <a href="#" className="hover:text-white text-light transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white text-light transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>
