@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { LoginModal } from "@/components/LoginModal";
 
 type NavbarProps = {
   active?: string;
@@ -14,6 +15,7 @@ type NavbarProps = {
 
 export function Navbar({ active, onLoginClick }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -80,6 +82,7 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
           <Button
             variant="outline"
             className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300"
+            onClick={() => setIsLoginModalOpen(true)}
           >
             Login
           </Button>
@@ -144,6 +147,10 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
             <Button
               variant="outline"
               className="w-full hover:scale-[1.02] transition-transform duration-300"
+              onClick={() => {
+                setIsLoginModalOpen(true);
+                setMobileMenuOpen(false);
+              }}
             >
               Login
             </Button>
@@ -158,6 +165,12 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
           </div>
         </div>
       )}
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
     </nav>
   );
 }
