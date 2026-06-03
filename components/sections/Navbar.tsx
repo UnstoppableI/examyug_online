@@ -52,13 +52,15 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
               href={item.href}
               className={`font-bold transition-all duration-300 relative group ${
                 active === item.href
-                  ? "text-accent"
-                  : "text-foreground hover:text-accent"
+                  ? "text-red-600"
+                  : "text-black hover:text-red-600"
               }`}
-              style={{color: "red !important", textDecoration: "none"}}
+              style={{ textDecoration: "none" }}
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                active === item.href ? "w-full bg-red-600" : "w-0 bg-red-600 group-hover:w-full"
+              }`}></span>
             </Link>
           ))}
 
@@ -118,11 +120,10 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
               key={item.href}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block text-[15px] font-medium transition-all duration-300 hover:text-red-300 hover:translate-x-1
-              ${
+              className={`block text-[15px] font-medium transition-all duration-300 hover:translate-x-1 ${
                 active === item.href
-                  ? "text-accent"
-                  : "text-dark"
+                  ? "text-red-600"
+                  : "text-black hover:text-red-600"
               }`}
               style={{ textDecoration: "none" }}
             >
