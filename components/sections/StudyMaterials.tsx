@@ -166,7 +166,7 @@ export function StudyMaterials() {
               key={category.id}
               variant={
                 selectedBookCategory === category.id
-                  ? 'default'
+                  ? 'destructive'
                   : 'outline'
               }
               onClick={() =>
@@ -221,6 +221,7 @@ export function StudyMaterials() {
 
                   <Button
                     size="sm"
+                    variant="outline"
                     onClick={() =>
                       window.open(material.bookPdf, '_blank')
                     }
