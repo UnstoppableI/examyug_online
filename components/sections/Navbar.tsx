@@ -158,7 +158,7 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
 
             <Link href="/signup" className="w-full">
               <Button
-                className="w-full hover:scale-[1.02] bg-accent duration-300"
+                className="w-full hover:scale-[1.02] duration-300"
                 variant="outline"
               >
                 Sign Up
