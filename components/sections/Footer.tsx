@@ -40,7 +40,7 @@ export function Footer() {
             <ul className="space-y-3 text-white text-opacity-70">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:support@examyug24@gmail.com">support@ExamYug24.com</span>
+                <a href="mailto:support@examyug24@gmail.com">support@ExamYug24.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
