@@ -205,7 +205,7 @@ export default function SignUpPage() {
                       errors.email ? 'border-red-500' : ''
                     }`}
                   />
-                  <Mail className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
+                  
                 </div>
                 {errors.email && (
                   <p className="text-red-500 text-xs mt-1">{errors.email}</p>

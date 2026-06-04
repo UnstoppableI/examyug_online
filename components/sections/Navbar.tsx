@@ -142,6 +142,8 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
               readOnly
             />
           </Link>
+          
+          <p></p>
 
           {/* Mobile Buttons */}
           <div className="flex flex-col gap-3">
@@ -158,7 +160,7 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
 
             <Link href="/signup" className="w-full">
               <Button
-                className="w-full hover:scale-[1.02] transition-transform duration-300"
+                className="w-full hover:scale-[1.02] bg-accent transition-transform duration-300"
               >
                 Sign Up
               </Button>

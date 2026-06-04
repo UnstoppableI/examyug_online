@@ -141,16 +141,6 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
           </div>
         </div>
 
-        {/* Social Login */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <Button type="button" variant="outline" className="hover:bg-primary/10 transition-colors duration-300">
-            Google
-          </Button>
-          <Button type="button" variant="outline" className="hover:bg-primary/10 transition-colors duration-300">
-            GitHub
-          </Button>
-        </div>
-
         {/* Sign Up Link */}
         <p className="text-center text-muted-foreground">
           Don&apos;t have an account?{' '}
