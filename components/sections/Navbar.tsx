@@ -91,6 +91,7 @@ export function Navbar({ active, onLoginClick }: NavbarProps) {
 
           <Link href="/signup">
             <Button
+              variant="destructive"
               className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300"
             >
               Sign Up
