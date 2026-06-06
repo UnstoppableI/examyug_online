@@ -415,7 +415,7 @@ export function StudyMaterials() {
       </section>
 
       {/* View More Button */}
-      <div className="text-center">
+      <div className="text-center mb-10">
           <Button
             variant="outline"
             size="lg"
