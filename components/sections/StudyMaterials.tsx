@@ -5,7 +5,8 @@ import { AnnouncementBar } from '@/components/sections/AnnouncementBar';
 import { Footer } from '@/components/sections/Footer';
 import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 interface Category {
@@ -44,6 +45,21 @@ export function StudyMaterials() {
   const [booksets, setBooksets] = useState<BookSet[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const booksCategoryRef = useRef<HTMLDivElement>(null);
+  const booksetsCategoryRef = useRef<HTMLDivElement>(null);
+
+  const scrollCategories = (
+  ref: React.RefObject<HTMLDivElement | null>,
+  direction: 'left' | 'right'
+  ) => {
+    if (!ref.current) return;
+  
+    ref.current.scrollBy({
+      left: direction === 'left' ? -300 : 300,
+      behavior: 'smooth',
+    });
+  };
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -160,23 +176,54 @@ export function StudyMaterials() {
         </h2>
 
         {/* Books Categories */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          {bookCategories.map((category) => (
+        <div className="mb-12">
+          <div className="flex items-center gap-2">
+        
             <Button
-              key={category.id}
-              variant={
-                selectedBookCategory === category.id
-                  ? 'destructive'
-                  : 'outline'
-              }
+              variant="outline"
+              size="icon"
+              className="shrink-0 rounded-full"
               onClick={() =>
-                setSelectedBookCategory(category.id)
+                scrollCategories(booksCategoryRef, 'left')
               }
-              className="hover:scale-105 transition-transform duration-300"
             >
-              {category.label}
+              <ChevronLeft className="h-4 w-4" />
             </Button>
-          ))}
+        
+            <div
+              ref={booksCategoryRef}
+              className="flex gap-3 overflow-x-auto no-scrollbar flex-1 scroll-smooth"
+            >
+              {bookCategories.map((category) => (
+                <Button
+                  key={category.id}
+                  variant={
+                    selectedBookCategory === category.id
+                      ? 'destructive'
+                      : 'outline'
+                  }
+                  onClick={() =>
+                    setSelectedBookCategory(category.id)
+                  }
+                  className="whitespace-nowrap shrink-0 hover:scale-105 transition-transform duration-300"
+                >
+                  {category.label}
+                </Button>
+              ))}
+            </div>
+        
+            <Button
+              variant="outline"
+              size="icon"
+              className="shrink-0 rounded-full"
+              onClick={() =>
+                scrollCategories(booksCategoryRef, 'right')
+              }
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+        
+          </div>
         </div>
 
         {/* Books Grid */}
@@ -249,25 +296,56 @@ export function StudyMaterials() {
         </h2>
 
         {/* BookSet Categories */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          {booksetCategories.map((category) => (
-            <Button
-              key={category.id}
-              variant={
-                selectedBooksetCategory === category.id
-                  ? 'destructive'
-                  : 'outline'
-              }
-              onClick={() =>
-                setSelectedBooksetCategory(category.id)
-              }
-              className="hover:scale-105 transition-transform duration-300"
-            >
-              {category.label}
-            </Button>
-          ))}
+        <div className="mb-12">
+        <div className="flex items-center gap-2">
+      
+          <Button
+            variant="outline"
+            size="icon"
+            className="shrink-0 rounded-full"
+            onClick={() =>
+              scrollCategories(booksetsCategoryRef, 'left')
+            }
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+      
+          <div
+            ref={booksetsCategoryRef}
+            className="flex gap-3 overflow-x-auto no-scrollbar flex-1 scroll-smooth"
+          >
+            {booksetCategories.map((category) => (
+              <Button
+                key={category.id}
+                variant={
+                  selectedBooksetCategory === category.id
+                    ? 'destructive'
+                    : 'outline'
+                }
+                onClick={() =>
+                  setSelectedBooksetCategory(category.id)
+                }
+                className="whitespace-nowrap shrink-0 hover:scale-105 transition-transform duration-300"
+              >
+                {category.label}
+              </Button>
+            ))}
+          </div>
+      
+          <Button
+            variant="outline"
+            size="icon"
+            className="shrink-0 rounded-full"
+            onClick={() =>
+              scrollCategories(booksetsCategoryRef, 'right')
+            }
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+      
         </div>
-
+      </div>
+        
         {/* BookSet Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredBooksets.map((bookset) => (
