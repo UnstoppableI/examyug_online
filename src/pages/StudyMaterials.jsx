@@ -112,7 +112,7 @@ export default function StudyMaterials() {
   return (
     <main className="bg-background">
       <AnnouncementBar />
-      <Navbar />
+      <Navbar active="/study-materials" />
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-12">

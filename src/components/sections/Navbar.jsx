@@ -91,7 +91,7 @@ export default function Navbar({ active, onLoginClick }) {
           </Button>
 
           <Link to="/signup">
-            <Button className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300">
+            <Button className="hidden min-[986px]:inline-flex hover:scale-105 transition-transform duration-300" variant="danger">
               Sign Up
             </Button>
           </Link>

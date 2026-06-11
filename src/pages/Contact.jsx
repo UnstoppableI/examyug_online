@@ -141,7 +141,7 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full" variant="danger">
               Send Message
             </Button>
           </form>
