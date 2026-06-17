@@ -8,15 +8,15 @@ export default function TrustStatistics() {
   ];
   
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12 py-20">
+    <section className="py-5">
+      <div className="container-lg d-d-flex justify-content-center px-3">
+        <h1 className="fs-3 md:display-5 fw-bold text-center text-foreground mb-5 py-5">
           Trusted by Millions of Students Nationwide
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="row row-cols-2 md:row-cols-4 gap-4">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-6 rounded-lg border border-gray-200 bg-gray-50">
-              <p className="text-3xl md:text-4xl font-bold mb-2" style={{color:"red"}}>
+            <div key={index} className="text-center p-6 rounded-2 border border-gray-200 bg-gray-50">
+              <p className="fs-3 md:display-5 fw-bold mb-2" style={{color:"red"}}>
                 {stat.number}
               </p>
               <p className="text-muted-foreground">{stat.label}</p>

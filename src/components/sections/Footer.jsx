@@ -3,44 +3,44 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-background py-12">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-light">
+    <footer className="bg-dark text-background py-5">
+      <div className="container-lg d-d-flex justify-content-center px-3">
+        <div className="row row-cols-1 md:row-cols-4 gap-4 mb-5 text-light">
           <div>
-            <h3 className="text-lg font-bold mb-4">ExamYug24</h3>
-            <p className="text-sm opacity-75">Your gateway to academic excellence</p>
+            <h3 className="fs-6 fw-bold mb-4">ExamYug24</h3>
+            <p className="small opacity-75">Your gateway to academic excellence</p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="fw-bold mb-4">Quick Links</h4>
+            <ul className="space-y-2 small">
               <li><Link to="/" className="hover:underline">Home</Link></li>
               <li><Link to="/courses" className="hover:underline">Courses</Link></li>
               <li><Link to="/about-us" className="hover:underline">About</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="fw-bold mb-4">Support</h4>
+            <ul className="space-y-2 small">
               <li><Link to="/contact-us" className="hover:underline">Contact Us</Link></li>
               <li><a href="#" className="hover:underline">FAQ</a></li>
               <li><a href="#" className="hover:underline">Privacy</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2">
+            <h4 className="fw-bold mb-4">Contact Info</h4>
+            <ul className="space-y-2 small">
+              <li className="d-flex align-items-center gap-2">
                 <Mail className="w-4 h-4" />
                 hello@examyug24.com
               </li>
-              <li className="flex items-center gap-2">
+              <li className="d-flex align-items-center gap-2">
                 <Phone className="w-4 h-4" />
                 +91 1234-567-890
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-background/20 pt-8 text-center text-sm opacity-75">
+        <div className="border-top border-background/20 pt-8 text-center small opacity-75">
           <p>&copy; 2026 ExamYug24. All rights reserved.</p>
         </div>
       </div>

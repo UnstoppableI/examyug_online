@@ -35,16 +35,16 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-red-500">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Student Testimonials</h2>
-          <p className="text-lg text-muted-foreground">
+    <section className="py-5 bg-red-500">
+      <div className="container-lg d-d-flex justify-content-center px-3">
+        <div className="text-center mb-5">
+          <h2 className="fs-3 md:display-5 fw-bold text-foreground mb-4">Student Testimonials</h2>
+          <p className="fs-6 text-muted-foreground">
             Hear from our successful students
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="row md:row-cols-2 lg:row-cols-4 gap-4">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}

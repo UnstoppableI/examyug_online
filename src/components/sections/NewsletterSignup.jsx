@@ -21,21 +21,21 @@ export default function NewsletterSignup() {
   return (
     <section
       id="contact-us"
-      className="py-20 bg-red-500"
+      className="py-5 bg-red-500"
     >
-      <div className="max-w-3xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      <div className="max-w-3xl d-d-flex justify-content-center px-3 text-center">
+        <h2 className="fs-3 md:display-5 fw-bold text-white mb-4">
           Get the Latest Updates
         </h2>
 
-        <p className="text-lg text-white/90 mb-8">
+        <p className="fs-6 text-white/90 mb-5">
           Subscribe to our newsletter for new courses, study tips, and
           exclusive offers
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          className="d-flex d-flex-column sm:d-flex-row gap-3 max-w-md d-d-flex justify-content-center"
         >
           <input
             type="email"
@@ -43,19 +43,19 @@ export default function NewsletterSignup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="flex-1 px-4 py-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-white"
+            className="d-flex-1 px-3 py-3 rounded-2 text-dark focus:outline-none focus:ring-2 focus:ring-white"
           />
 
           <Button
             type="submit"
-            className="bg-dark text-primary hover:opacity-90 font-semibold"
+            className="bg-dark text-primary hover:opacity-90 fw-bold"
           >
             {isSubmitted ? "Subscribed!" : "Subscribe"}
           </Button>
         </form>
 
         {isSubmitted && (
-          <p className="mt-4 text-white text-sm">
+          <p className="mt-4 text-white small">
             Thank you for subscribing! Check your email for confirmation.
           </p>
         )}

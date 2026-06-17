@@ -35,11 +35,11 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-red-500">
-      <div className="max-w-3xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-muted-foreground">
+    <section id="faq" className="py-5 bg-red-500">
+      <div className="max-w-3xl d-d-flex justify-content-center px-3">
+        <div className="text-center mb-5">
+          <h2 className="fs-3 md:display-5 fw-bold text-foreground mb-4">Frequently Asked Questions</h2>
+          <p className="fs-6 text-muted-foreground">
             Find answers to common questions about our platform
           </p>
         </div>
@@ -48,21 +48,21 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white border border-border rounded-lg overflow-hidden"
+              className="bg-white border border-border rounded-2 overflow-d-none"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/50 transition-colors"
+                className="w-100 px-6 py-3 d-flex align-items-center justify-content-between hover:bg-muted/50-colors"
               >
-                <span className="font-semibold text-foreground text-left">{faq.question}</span>
+                <span className="fw-bold text-foreground text-start">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-muted-foreground transition-transform ${
+                  className={`w-5 h-5 text-muted-foreground-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 py-4 border-t border-border bg-muted/30">
+                <div className="px-6 py-3 border-top border-border bg-muted/30">
                   <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               )}

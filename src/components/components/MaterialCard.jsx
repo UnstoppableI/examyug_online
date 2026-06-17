@@ -21,8 +21,8 @@ export default function MaterialCard({
       <div className="material-card-inner">
 
         {/* Front Side */}
-        <Card className="material-card-front border-0 shadow-sm">
-          <div style={{ height: "240px", overflow: "hidden" }}>
+        <Card className="material-card-front border-0 shadow-sm-sm">
+          <div style={{ height: "240px", overflow: "d-none" }}>
             <Card.Img
               variant="top"
               src={image}
@@ -34,20 +34,20 @@ export default function MaterialCard({
             />
           </div>
 
-          <Card.Body className="d-flex flex-column">
+          <Card.Body className="d-d-flex d-flex-column">
             <span className="badge bg-primary mb-3 align-self-start">
               {category || "General"}
             </span>
 
             <Card.Title>{title}</Card.Title>
 
-            <Card.Text className="text-muted flex-grow-1">
+            <Card.Text className="text-muted d-flex-grow-1">
               {description?.length > 100
                 ? `${description.substring(0, 100)}...`
                 : description}
             </Card.Text>
 
-            <div className="d-flex justify-content-between align-items-center mt-auto">
+            <div className="d-d-flex justify-content-between align-align-items-center mt-auto">
               <div>
                 <span className="text-muted text-decoration-line-through">
                   ₹{maxPrice}
@@ -70,13 +70,13 @@ export default function MaterialCard({
         </Card>
 
         {/* Back Side */}
-        <Card className="material-card-back border-0 shadow-sm">
-          <Card.Body className="d-flex flex-column">
+        <Card className="material-card-back border-0 shadow-sm-sm">
+          <Card.Body className="d-d-flex d-flex-column">
 
             <Card.Title>{title}</Card.Title>
 
             <div
-              className="text-muted mb-4 flex-grow-1"
+              className="text-muted mb-4 d-flex-grow-1"
               style={{
                 overflowY: "auto",
                 maxHeight: "220px",
@@ -97,7 +97,7 @@ export default function MaterialCard({
               </div>
             </div>
 
-            <div className="d-flex justify-content-between">
+            <div className="d-d-flex justify-content-between">
               <Button
                 variant="secondary"
                 onClick={() => setFlipped(false)}

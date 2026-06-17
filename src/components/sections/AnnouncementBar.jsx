@@ -8,14 +8,14 @@ const announcements = [
 
 export default function AnnouncementBar() {
   return (
-    <div className="bg-red-500 bg-opacity-10 border-b border-accent border-opacity-20 relative overflow-hidden h-12 flex items-center">
-      <div className="marquee flex items-center space-x-12 h-full">
+    <div className="bg-red-500 bg-opacity-10 border-bottom border-accent border-opacity-20 relative overflow-d-none h-12 d-flex align-items-center">
+      <div className="marquee d-flex align-items-center space-x-12 h-full">
         {announcements.map((item, index) => (
           <div
             key={index}
-            className="flex-shrink-0 px-4 flex items-center h-full"
+            className="d-flex-shrink-0 px-3 d-flex align-items-center h-full"
           >
-            <p className="text-yellow-300 font-bold mb-0 flex items-center h-full">
+            <p className="text-yellow-300 fw-bold mb-0 d-flex align-items-center h-full">
               {item.title}
             </p>
           </div>

@@ -55,9 +55,9 @@ export default function FeaturedCourses() {
 
   if (loading) {
     return (
-      <section id="courses" className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-lg text-muted-foreground">
+      <section id="courses" className="py-5 bg-background">
+        <div className="container-lg d-d-flex justify-content-center px-3 text-center">
+          <p className="fs-6 text-muted-foreground">
             Loading featured courses...
           </p>
         </div>
@@ -66,20 +66,20 @@ export default function FeaturedCourses() {
   }
 
   return (
-    <section id="courses" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="courses" className="py-5 bg-background">
+      <div className="container-lg d-d-flex justify-content-center px-3">
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-5">
+          <h2 className="fs-3 md:display-5 fw-bold text-foreground mb-4">
             Featured Courses
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="fs-6 text-muted-foreground">
             Choose from our wide range of expertly curated courses
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
+        <div className="d-flex d-flex-wrap gap-3 justify-content-center mb-5">
           {categories.map((category) => (
             <Button
               key={String(category)}
@@ -94,7 +94,7 @@ export default function FeaturedCourses() {
 
         {/* Courses Grid */}
         {displayedCourses.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="row md:row-cols-2 lg:row-cols-3 gap-4 mb-5">
             {displayedCourses.slice(0, 6).map((course) => (
               <CourseCard
                 key={course._id}

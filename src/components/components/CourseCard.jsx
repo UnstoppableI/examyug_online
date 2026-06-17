@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
 import { Star, Users } from "lucide-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CourseCard.css";
-=======
-import { Star, Users } from 'lucide-react';
-import Button  from '../ui/button';
->>>>>>> 8911004b1c5f6d03e93954585834508dafa4542e
 
 export function CourseCard({
   title,
@@ -26,7 +21,7 @@ export function CourseCard({
       <div className="course-card-inner">
 
         {/* Front Side */}
-        <Card className="course-card-front shadow-sm border-0">
+        <Card className="course-card-front shadow-sm-sm border-0">
           <Card.Img
             variant="top"
             src={image}
@@ -41,13 +36,13 @@ export function CourseCard({
               {instructor}
             </Card.Text>
 
-            <div className="d-flex justify-content-between mb-3">
-              <div className="d-flex align-items-center gap-1">
+            <div className="d-d-flex justify-content-between mb-3">
+              <div className="d-d-flex align-align-items-center gap-1">
                 <Users size={16} />
                 <span>{students.toLocaleString()}</span>
               </div>
 
-              <div className="d-flex align-items-center gap-1">
+              <div className="d-d-flex align-align-items-center gap-1">
                 <Star
                   size={16}
                   fill="#facc15"
@@ -57,7 +52,7 @@ export function CourseCard({
               </div>
             </div>
 
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-d-flex justify-content-between align-align-items-center">
               <span className="fs-4 fw-bold text-success">
                 ${price}
               </span>
@@ -74,8 +69,8 @@ export function CourseCard({
         </Card>
 
         {/* Back Side */}
-        <Card className="course-card-back shadow-sm border-0">
-          <Card.Body className="d-flex flex-column justify-content-between h-100">
+        <Card className="course-card-back shadow-sm-sm border-0">
+          <Card.Body className="d-d-flex d-flex-column justify-content-between h-100">
             <div>
               <Card.Title>{title}</Card.Title>
 
@@ -102,7 +97,6 @@ export function CourseCard({
     </div>
   );
 }
-<<<<<<< HEAD
 
 CourseCard.propTypes = {
   title: PropTypes.string.isRequired,
@@ -113,5 +107,3 @@ CourseCard.propTypes = {
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
-=======
->>>>>>> 8911004b1c5f6d03e93954585834508dafa4542e

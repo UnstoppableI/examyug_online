@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Download } from "lucide-react";
-import Button  from "../ui/Button"; // Adjust path as needed
+import Button from "../ui/button";
 import MaterialCard from "../components/MaterialCard";
-
-=======
-import { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
-import Button from '../ui/button';
->>>>>>> 8911004b1c5f6d03e93954585834508dafa4542e
 
 export default function StudyMaterials() {
   const [selectedBookCategory, setSelectedBookCategory] =
@@ -62,8 +55,8 @@ export default function StudyMaterials() {
 
   if (loading) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
-        <p className="text-lg">
+      <main className="min-vh-100 d-flex align-items-center justify-content-center">
+        <p className="fs-6">
           Loading study materials...
         </p>
       </main>
@@ -119,13 +112,13 @@ export default function StudyMaterials() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+      <section className="container-lg d-d-flex justify-content-center px-3 py-5">
+        <div className="text-center mb-5">
+          <h1 className="display-5 md:display-4 fw-bold text-foreground mb-5">
             Study Materials
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="fs-6 text-muted-foreground max-w-2xl d-d-flex justify-content-center">
             Access comprehensive study materials,
             books, book sets, notes, and resources
             created by our expert instructors.
@@ -134,21 +127,21 @@ export default function StudyMaterials() {
       </section>
 
       {/* Books Section */}
-      <section className="max-w-7xl mx-auto px-4 py-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+      <section className="container-lg d-d-flex justify-content-center px-3 py-3">
+        <h2 className="fs-3 fw-bold mb-5 text-center">
           Books
         </h2>
 
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <div className="d-flex d-flex-wrap gap-3 justify-content-center mb-5">
           {bookCategories.map((category) => (
             <Button
               key={category.id}
               onClick={() =>
                 setSelectedBookCategory(category.id)
               }
-              className={`hover:scale-105 transition-transform duration-300 ${
+              className={`-transform ${
                 selectedBookCategory === category.id
-                  ? "bg-red-600 text-white"
+                  ? "bg-danger text-white"
                   : ""
               }`}
             >
@@ -157,7 +150,7 @@ export default function StudyMaterials() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="row row-cols-1 md:row-cols-2 lg:row-cols-3 gap-4">
         {filteredMaterials.map((material) => (
   <div
     key={material._id}
@@ -166,37 +159,37 @@ export default function StudyMaterials() {
     <div className="material-card-inner">
 
       {/* Front Side */}
-      <div className="material-card-front bg-white border rounded-lg overflow-hidden shadow-sm flex flex-col">
-        <div className="h-60 overflow-hidden">
+      <div className="material-card-front bg-white border rounded-2 overflow-d-none shadow-sm-sm d-flex d-flex-column">
+        <div className="h-60 overflow-d-none">
           <img
             src={material.thumbnail}
             alt={material.bookTitle}
-            className="w-full h-full object-cover"
+            className="w-100 h-full object-fit-cover"
           />
         </div>
 
-        <div className="p-6 flex flex-col flex-grow">
-          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium w-fit mb-3">
+        <div className="p-6 d-flex d-flex-column d-flex-grow">
+          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-circle small fw-bold w-fit mb-3">
             {material.category?.categoryTitle || "General"}
           </span>
 
-          <h3 className="text-lg font-bold mb-2">
+          <h3 className="fs-6 fw-bold mb-2">
             {material.bookTitle}
           </h3>
 
-          <p className="text-gray-500 text-sm flex-grow mb-4">
+          <p className="text-muted small d-flex-grow mb-4">
             {material.bookDescription?.length > 100
               ? `${material.bookDescription.substring(0, 100)}...`
               : material.bookDescription}
           </p>
 
-          <div className="flex justify-between items-center border-t pt-4">
+          <div className="d-flex justify-content-between align-items-center border-top pt-4">
             <div>
-              <span className="line-through text-gray-400 text-sm">
+              <span className="line-through text-gray-400 small">
                 ₹{material.maxPrice}
               </span>
 
-              <span className="ml-2 text-blue-600 font-bold text-lg">
+              <span className="ms-2 text-primary fw-bold fs-6">
                 ₹{material.sellingPrice}
               </span>
             </div>
@@ -211,27 +204,27 @@ export default function StudyMaterials() {
       </div>
 
       {/* Back Side */}
-      <div className="material-card-back bg-white border rounded-lg overflow-hidden shadow-sm">
-        <div className="p-6 flex flex-col h-full">
-          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium w-fit mb-3">
+      <div className="material-card-back bg-white border rounded-2 overflow-d-none shadow-sm-sm">
+        <div className="p-6 d-flex d-flex-column h-full">
+          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-circle small fw-bold w-fit mb-3">
             {material.category?.categoryTitle || "General"}
           </span>
 
-          <h3 className="text-lg font-bold mb-4">
+          <h3 className="fs-6 fw-bold mb-4">
             {material.bookTitle}
           </h3>
 
-          <div className="text-gray-500 text-sm flex-grow overflow-auto mb-4">
+          <div className="text-muted small d-flex-grow overflow-auto mb-4">
             {material.bookDescription}
           </div>
 
-          <div className="flex justify-between items-center border-t pt-4">
+          <div className="d-flex justify-content-between align-items-center border-top pt-4">
             <div>
-              <span className="line-through text-gray-400 text-sm">
+              <span className="line-through text-gray-400 small">
                 ₹{material.maxPrice}
               </span>
 
-              <span className="ml-2 text-blue-600 font-bold text-lg">
+              <span className="ms-2 text-primary fw-bold fs-6">
                 ₹{material.sellingPrice}
               </span>
             </div>
@@ -247,7 +240,7 @@ export default function StudyMaterials() {
                 }
               }}
             >
-              <Download className="w-4 h-4 mr-2 inline" />
+              <Download className="w-4 h-4 me-2 inline" />
               Download
             </Button>
           </div>
@@ -274,7 +267,7 @@ export default function StudyMaterials() {
 ))}
 
           {filteredMaterials.length === 0 && (
-            <div className="col-span-full text-center py-8">
+            <div className="col-span-full text-center py-5">
               No books found.
             </div>
           )}
@@ -282,12 +275,12 @@ export default function StudyMaterials() {
       </section>
 
       {/* Book Sets Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+      <section className="container-lg d-d-flex justify-content-center px-3 py-5">
+        <h2 className="fs-3 fw-bold mb-5 text-center">
           Book Sets
         </h2>
 
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <div className="d-flex d-flex-wrap gap-3 justify-content-center mb-5">
           {booksetCategories.map((category) => (
             <Button
               key={category.id}
@@ -296,9 +289,9 @@ export default function StudyMaterials() {
                   category.id
                 )
               }
-              className={`hover:scale-105 transition-transform duration-300 ${
+              className={`-transform ${
                 selectedBooksetCategory === category.id
-                  ? "bg-blue-600 text-white"
+                  ? "bg-primary text-white"
                   : ""
               }`}
             >
@@ -307,7 +300,7 @@ export default function StudyMaterials() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="row row-cols-1 md:row-cols-2 lg:row-cols-3 gap-4">
         {filteredBooksets.map((bookset) => (
   <MaterialCard
     key={bookset._id}
@@ -325,7 +318,7 @@ export default function StudyMaterials() {
 ))}
 
           {filteredBooksets.length === 0 && (
-            <div className="col-span-full text-center py-8">
+            <div className="col-span-full text-center py-5">
               No book sets found.
             </div>
           )}
@@ -333,7 +326,7 @@ export default function StudyMaterials() {
       </section>
 
       {/* View More */}
-      <div className="text-center pb-16">
+      <div className="text-center pb-5">
         <Button
           variant="danger"
           onClick={() => {
@@ -347,51 +340,51 @@ export default function StudyMaterials() {
 
       {selectedMaterial && (
   <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md p-4"
+    className="fixed inset-0 z-50 d-flex align-items-center justify-content-center bg-dark/50 backdrop-blur-md p-4"
     onClick={() => setSelectedMaterial(null)}
   >
     <div
-      className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden"
+      className="bg-white rounded-3 shadow-sm-2xl w-100 max-w-5xl max-h-[90vh] overflow-d-none"
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="grid md:grid-cols-2">
+      <div className="row md:row-cols-2">
         
         {/* Image Section */}
         <div className="h-72 md:h-auto">
           <img
             src={selectedMaterial.thumbnail}
             alt={selectedMaterial.bookTitle}
-            className="w-full h-full object-cover"
+            className="w-100 h-full object-fit-cover"
           />
         </div>
 
         {/* Details Section */}
-        <div className="p-8 flex flex-col">
-          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium w-fit mb-4">
+        <div className="p-8 d-flex d-flex-column">
+          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-circle small fw-bold w-fit mb-4">
             {selectedMaterial.category?.categoryTitle ||
               "General"}
           </span>
 
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="fs-3 fw-bold mb-4">
             {selectedMaterial.bookTitle}
           </h2>
 
-          <div className="overflow-y-auto flex-grow text-gray-600 mb-6 pr-2">
+          <div className="overflow-y-auto d-flex-grow text-muted mb-5 pr-2">
             {selectedMaterial.bookDescription}
           </div>
 
-          <div className="flex flex-wrap justify-between items-center border-t pt-6 gap-4">
+          <div className="d-flex d-flex-wrap justify-content-between align-items-center border-top pt-6 gap-3">
             <div>
               <span className="line-through text-gray-400">
                 ₹{selectedMaterial.maxPrice}
               </span>
 
-              <span className="ml-3 text-blue-600 font-bold text-2xl">
+              <span className="ml-3 text-primary fw-bold fs-4">
                 ₹{selectedMaterial.sellingPrice}
               </span>
             </div>
 
-            <div className="flex gap-3">
+            <div className="d-flex gap-3">
               <Button
                 variant="outline"
                 onClick={() => setSelectedMaterial(null)}
@@ -410,7 +403,7 @@ export default function StudyMaterials() {
                   }
                 }}
               >
-                <Download className="w-4 h-4 mr-2 inline" />
+                <Download className="w-4 h-4 me-2 inline" />
                 Download
               </Button>
             </div>
