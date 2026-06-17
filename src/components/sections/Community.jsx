@@ -18,8 +18,8 @@ export default function Community() {
             <div className="inline-block p-3 bg-primary bg-opacity-10 rounded-lg mb-4">
               <MessageSquare className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="font-semibold text-foreground mb-2 text-lg">Discussion Forums</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="font-semibold text-white mb-2 text-lg">Discussion Forums</h3>
+            <p className="text-foreground mb-4">
               Ask questions, share insights, and learn from peer discussions on any topic.
             </p>
             <Button variant="outline">Join Forums</Button>

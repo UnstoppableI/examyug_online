@@ -22,10 +22,10 @@ export default function StudyMaterials() {
       try {
         const [booksRes, booksetsRes] = await Promise.all([
           fetch(
-            'https://examyug-dashboard-backend.onrender.com/api/v1/book/view-all-books?page=1&limit=5'
+            'https://examyug-dashboard-backend.onrender.com/api/v1/book/view-all-books?page=1&limit=6'
           ),
           fetch(
-            'https://examyug-dashboard-backend.onrender.com/api/v1/bookset/view-all-booksets?page=1&limit=5'
+            'https://examyug-dashboard-backend.onrender.com/api/v1/bookset/view-all-booksets?page=1&limit=6'
           ),
         ]);
 

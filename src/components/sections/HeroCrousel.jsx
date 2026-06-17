@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function HeroCrousel() {
   return (
-    <div className="bg-black py-4">
+    <div className="bg-white py-4">
       <Carousel data-bs-theme="dark">
         <CarouselItem>
           <img

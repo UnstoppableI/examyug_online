@@ -62,12 +62,12 @@ export default function Navbar({ active, onLoginClick }) {
           ))}
 
           {/* Search */}
-          <Link to="/search">
+          <Link to="" >
             <Input
               type="text"
               placeholder="Search courses..."
-              className="hidden xl:block w-[220px] focus-visible:ring-primary cursor-pointer"
-              readOnly
+              className="hidden xl:block w-[220px] cursor-pointer bg-white"
+              
             />
           </Link>
         </div>

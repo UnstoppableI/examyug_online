@@ -8,19 +8,19 @@ const announcements = [
 
 export default function AnnouncementBar() {
   return (
-    <div className="bg-accent bg-opacity-10 border-b border-accent border-opacity-20 relative overflow-hidden">
-      <div className="marquee flex space-x-12">
+    <div className="bg-red-500 bg-opacity-10 border-b border-accent border-opacity-20 relative overflow-hidden h-12 flex items-center">
+      <div className="marquee flex items-center space-x-12 h-full">
         {announcements.map((item, index) => (
           <div
             key={index}
-            className="flex-shrink-0 px-4 flex items-center justify-center"
+            className="flex-shrink-0 px-4 flex items-center h-full"
           >
-            <p className="text-yellow-300 text-center font-bold">
+            <p className="text-yellow-300 font-bold mb-0 flex items-center h-full">
               {item.title}
             </p>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }

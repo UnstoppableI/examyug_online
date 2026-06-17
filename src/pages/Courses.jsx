@@ -15,7 +15,7 @@ export default function CoursesPage(){
   useEffect(() => {
     const fetchCourses = async () => {
       try{
-        const response = await fetch("https://examyug-dashboard-backend.onrender.com/api/v1/course/view-all-courses?page=1&limit=5"
+        const response = await fetch("https://examyug-dashboard-backend.onrender.com/api/v1/course/view-all-courses"
       );
       const data = await response.json();
 

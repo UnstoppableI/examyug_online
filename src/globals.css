@@ -3,15 +3,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+  crossorigin="anonymous"
+/>
+
 :root {
-  --background: oklch(0.995 0.001 0);
+  --background: red;
   --foreground: oklch(0 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0 0 0);
-  --primary: oklch(0.53 0.3 12);
-  --primary-foreground: oklch(1 0 0);
+  --primary: yellow;
+  --primary-foreground: black;
   --secondary: oklch(0.85 0.24 95);
   --secondary-foreground: oklch(0 0 0);
   --muted: oklch(0.93 0 0);
@@ -40,13 +47,13 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: red;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.645 0.246 16.439);
+  --primary: red;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
