@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { Star } from "lucide-react";
 
 export default function TestimonialCard({
