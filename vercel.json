@@ -5,8 +5,12 @@
   "framework": "vite",
   "routes": [
     {
-      "src": "^/(.*)$",
-      "destination": "/index.html"
+      "src": "/assets/.*",
+      "dest": "/$0"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
     }
   ],
   "headers": [
