@@ -44,8 +44,8 @@ export default function CoursesPage(){
 
   if(loading){
     return (
-      <main className="min-h-screen flex items-center justify-center">
-       <p className="text-lg">Loading courses...</p>
+      <main className="min-vh-100 d-flex align-items-center justify-content-center">
+       <p className="fs-6">Loading courses...</p>
       </main>
     );
   }
@@ -57,20 +57,20 @@ export default function CoursesPage(){
       <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+      <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-5 md:py-5">
+        <div className="container-lg d-d-flex justify-content-center px-3">
+          <div className="text-center mb-5">
+            <h1 className="display-5 md:display-4 fw-bold text-foreground mb-4">
               Explore Our Courses
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="fs-6 text-muted-foreground max-w-2xl d-d-flex justify-content-center">
               Choose from our comprehensive collection of industry-leading courses and upskill yourself.
             </p>
           </div>
 
           {/* Filters */}
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-            <div className="w-full md:w-auto flex-1 md:flex-none md:min-w-64">
+          <div className="d-flex d-flex-column md:d-flex-row gap-3 align-items-center justify-content-center">
+            <div className="w-100 md:w-auto d-flex-1 md:d-flex-none md:min-w-64">
               <div className="relative">
                 <Input
                   type="text"
@@ -82,13 +82,13 @@ export default function CoursesPage(){
               </div>
             </div>
 
-            <div className="flex gap-2 flex-wrap justify-center">
+            <div className="d-flex gap-2 d-flex-wrap justify-content-center">
               {['all', 'Beginner', 'Intermediate', 'Advanced'].map((level) => (
                 <Button
                   key={level}
                   onClick={() => setSelectedLevel(level)}
                   variant={selectedLevel === level ? 'default' : 'outline'}
-                  className="transition-all duration-300"
+                  className=""
                 >
                   {level.charAt(0).toUpperCase() + level.slice(1)}
                 </Button>
@@ -99,30 +99,30 @@ export default function CoursesPage(){
       </section>
 
       {/* Courses Grid */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-5 md:py-24">
+        <div className="container-lg d-d-flex justify-content-center px-3">
           {filteredCourses.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground">No courses found matching your search.</p>
+            <div className="text-center py-5">
+              <p className="fs-6 text-muted-foreground">No courses found matching your search.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="row row-cols-1 md:row-cols-2 lg:row-cols-3 gap-4">
               {filteredCourses.map((course) => (
                 <div
                 key={course._id}
-                className="bg-white rounded-lg border border-border shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-2 border border-border shadow-sm-sm hover:shadow-sm-lg overflow-d-none"
               >
                 {/* Thumbnail */}
                 <img
                   src={course.thumbnail}
                   alt={course.courseTitle}
-                  className="w-full h-48 object-cover"
+                  className="w-100 h-48 object-fit-cover"
                 />
               
                 {/* Badge */}
                 {(course.featured === "yes" || course.newBatch === "yes") && (
-                  <div className="px-4 pt-4">
-                    <span className="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">
+                  <div className="px-3 pt-4">
+                    <span className="inline-d-block bg-primary/20 text-primary px-3 py-1 rounded-circle small fw-bold">
                       {course.featured === "yes"
                         ? "Featured"
                         : course.newBatch === "yes"
@@ -133,39 +133,39 @@ export default function CoursesPage(){
                 )}
               
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                  <h3 className="fs-5 fw-bold text-foreground mb-2">
                     {course.courseTitle}
                   </h3>
               
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                  <p className="text-muted-foreground small mb-4 line-clamp-3">
                     {course.courseDescription}
                   </p>
               
-                  <div className="space-y-2 mb-6 pb-6 border-b border-border">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="space-y-2 mb-5 pb-6 border-bottom border-border">
+                    <div className="d-flex align-items-center gap-2 small text-muted-foreground">
                       <Award className="w-4 h-4" />
                       <span>{course.category?.categoryTitle}</span>
                     </div>
               
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="d-flex align-items-center gap-2 small text-muted-foreground">
                       <Clock className="w-4 h-4" />
                       <span>{course.timeDuration}</span>
                     </div>
                   </div>
               
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="d-flex align-items-center justify-content-between mb-4">
                     <div>
-                      <span className="text-sm line-through text-muted-foreground">
+                      <span className="small line-through text-muted-foreground">
                         ₹{course.maxPrice}
                       </span>
                     </div>
               
-                    <span className="text-xl font-bold text-primary">
+                    <span className="fs-5 fw-bold text-primary">
                       ₹{course.sellingPrice}
                     </span>
                   </div>
               
-                  <Button className="w-full">
+                  <Button className="w-100">
                     View Course
                   </Button>
                 </div>
